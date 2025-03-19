@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import { FaTachometerAlt, FaWallet, FaExchangeAlt, FaCreditCard, FaChartLine, FaHandHoldingUsd, FaCog, FaSignOutAlt } from 'react-icons/fa';
+
 import S from './styles/Sidebar.module.css';
 
 export const Sidebar = () => {
@@ -13,7 +14,7 @@ export const Sidebar = () => {
   };
 
   const getLinkClass = (path: string) => {
-    return location.pathname === path ? S.active : ''; // Aplica 'active' quando a rota é igual
+    return location.pathname === path ? S.active : '';
   };
 
   return (
