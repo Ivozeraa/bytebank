@@ -1,0 +1,67 @@
+.sidebar {
+  max-width: 12rem;
+  overflow: hidden;
+  height: 84.2vh;
+}
+
+.mainSidebar {
+  height: 70vh;
+}
+
+.sidebarPage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  gap: 12px;
+  margin: 0.5rem 2rem;
+  width: 8rem;
+  font-weight: bold;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+
+.icon {
+  color: var(--icon);
+}
+
+.pageName {
+  color: var(--font);
+}
+
+.pageName, .icon {
+  font-size: 1rem;
+}
+
+.sidebarPage:hover {
+  background-color: var(--purple); 
+}
+
+.sidebarPage:hover .pageName,
+.sidebarPage:hover .icon {
+  color: rgb(236, 246, 255);
+}
+
+.active {
+  background-color: var(--t-purple);
+  .pageName, .icon{
+    color: var(--purple);
+  }
+}
+
+.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 5px;
+  height: 100%;
+  background-color: var(--purple);
+  border-radius: 2px;
+  transition: 5s;
+}
+

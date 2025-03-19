@@ -1,7 +1,7 @@
-header{
+.header{
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo{
@@ -13,7 +13,25 @@ header{
   width: 7rem;
 }
 
-.pages{
-  height: 70vh;
+.logo h2{
+  font-family: 'Rubik', sans;
 }
 
+.login{
+  display: flex;
+  gap: 10px;
+  margin: 0 1rem;
+  border: none;
+  background-color: var(--t-purple);
+  padding: 7px;
+  border-radius: 20px;
+  color: var(--purple);
+  cursor: pointer;
+  transition: .2s ease-in-out;
+}
+
+.login:hover{
+  scale: 1.1;
+  background-color: var(--purple);
+  color: rgb(236, 246, 255);
+}
