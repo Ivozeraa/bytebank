@@ -1,0 +1,22 @@
+.headerPage{
+  display: flex;
+  gap: 10px;
+  margin: 0 2rem;
+  width: 7rem;
+  font-weight: bold;
+  padding: 5px;
+  border: none;
+  border-radius: 8px;
+}
+
+.icon{
+  color: var(--icon);
+}
+
+.pageName{
+  color: var(--font);
+}
+
+.pageName, .icon{
+  font-size: 1rem;
+}  
