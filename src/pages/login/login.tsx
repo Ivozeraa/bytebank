@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { login } from '../../utils/auth';
 
 //depois eu arrumo o Login e o Registro, oto entendendo como funciona
+// Kkkkkkkkkk Kkkkkkkkkkk
 
 export const Login: React.FC = () => {
   const [email, setEmail] = useState('');

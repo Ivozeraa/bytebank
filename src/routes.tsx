@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
-import {Login} from "../src/pages/login/login"; // Verifique se o caminho está correto
+import {Login} from "./pages/login/Login"; // Verifique se o caminho está correto
 
 // const PrivateRoute: React.FC<{ children: JSX.Element }> = ({ children }) => {
 //   const isAuthenticated = !!localStorage.getItem("token");

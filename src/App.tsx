@@ -8,7 +8,9 @@ import { Loan } from './pages/Loan'
 import { Transfer } from './pages/Transfer'
 import { Payment } from './pages/Payment'
 import { Investment } from './pages/Investment'
+import { Login } from './pages/login/login';
 import { Settings } from './pages/Settings';
+
 
 import S from './App.module.css';
 
@@ -26,6 +28,7 @@ function App() {
         <Route path="/investment" element={<Investment />} />
         <Route path="/loan" element={<Loan />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
   );

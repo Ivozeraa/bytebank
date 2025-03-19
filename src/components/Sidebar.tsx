@@ -8,10 +8,6 @@ export const Sidebar = () => {
   const [isLogged, setIsLogged] = useState(false);
   const location = useLocation();
 
-  const handleLogin = () => {
-    setIsLogged(true);
-  };
-
   const handleLogout = () => {
     setIsLogged(false);
   };
