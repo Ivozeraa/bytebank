@@ -8,7 +8,7 @@ import { Loan } from './pages/Loan'
 import { Transfer } from './pages/Transfer'
 import { Payment } from './pages/Payment'
 import { Investment } from './pages/Investment'
-import { Login } from './pages/login/login';
+import { Login } from './pages/login/Login';
 import { Settings } from './pages/Settings';
 
 

@@ -8,7 +8,7 @@ export const Header = () => {
     <header className={S.header}>
       <div className={S.logo}>
         <img src="./src/assets/logo.png" alt="logo" />
-        <h2>BYTEBANK</h2>
+        <h2 className={S.headerTitle}>BYTEBANK</h2>
       </div>
       
       <Link to="/login" className={`${S.sidebarPage}`}>

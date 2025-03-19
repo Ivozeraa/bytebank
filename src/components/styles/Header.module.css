@@ -7,14 +7,16 @@
 .logo{
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .logo img{
   width: 7rem;
 }
 
-.logo h2{
+.headerTitle{
   font-family: 'Rubik', sans-serif;
+  font-weight: bold;
 }
 
 .login{
