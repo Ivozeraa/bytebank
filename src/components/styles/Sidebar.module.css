@@ -45,6 +45,7 @@
 .sidebarPage:hover .pageName,
 .sidebarPage:hover .icon {
   color: rgb(236, 246, 255);
+  transition: color 0.3s ease, color 0.3s ease;
 }
 
 .active {
