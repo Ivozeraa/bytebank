@@ -28,8 +28,8 @@ function App() {
             <Route path="/settings" element={<Settings />} />
           </Route>
 
+          <Route path="/registro" element={<Register />} /> 
           <Route path="/login" element={<Login />} />
-          <Route path="/registro" element={<Register />} />
         </Routes>
       </div>
     </>
