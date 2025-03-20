@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
-import { login } from '../../utils/auth';
-import styles from './styles.module.css';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React, { useState } from "react";
+import { login } from "../../utils/auth";
+import styles from "./styles.module.css";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 export const Login: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate(); 
 
   const handleLogin = async () => {
     setIsLoading(true);
@@ -16,22 +18,27 @@ export const Login: React.FC = () => {
 
     try {
       await login(email, password);
-      toast.success("Login realizado com sucesso!")
-    } catch (err: any) {
-      console.error('Erro no login:', err);
+      toast.success("Login realizado com sucesso!");
 
-      let errorMessage = 'Algo deu errado. Tente novamente.';
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 2000); 
+
+    } catch (err: any) {
+      console.error("Erro no login:", err);
+
+      let errorMessage = "Algo deu errado. Tente novamente.";
 
       if (err.response && err.response.data) {
         errorMessage = err.response.data.message || errorMessage;
-      } else if (err.message.includes('network')) {
-        errorMessage = 'Erro de conexão. Verifique sua internet.';
-      } else if (err.message.includes('invalid credentials')) {
-        errorMessage = 'Email ou senha incorretos.';
+      } else if (err.message.includes("network")) {
+        errorMessage = "Erro de conexão. Verifique sua internet.";
+      } else if (err.message.includes("invalid credentials")) {
+        errorMessage = "Email ou senha incorretos.";
       }
 
       setError(errorMessage);
-      toast.error(`${errorMessage}`, { position: 'top-right' });
+      toast.error(errorMessage, { position: "top-right" });
     } finally {
       setIsLoading(false);
     }
@@ -39,7 +46,7 @@ export const Login: React.FC = () => {
 
   return (
     <div className={styles.container}>
-    <ToastContainer />
+      <ToastContainer />
 
       <div className={styles.card}>
         <h2 className={styles.title}>Entrar</h2>
@@ -64,9 +71,17 @@ export const Login: React.FC = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button onClick={handleLogin} disabled={isLoading} className={styles.button}>
-          {isLoading ? 'Entrando...' : 'Entrar'}
+        <button
+          onClick={handleLogin}
+          disabled={isLoading}
+          className={styles.button}
+        >
+          {isLoading ? "Entrando..." : "Entrar"}
         </button>
+
+        <a href="/register" className={styles.registerBttn}>
+          Não possui conta? Cadastre-se já
+        </a>
       </div>
     </div>
   );

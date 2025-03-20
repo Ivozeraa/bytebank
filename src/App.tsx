@@ -11,6 +11,7 @@ import { Login } from "./pages/login/login";
 import { Settings } from "./pages/Settings";
 
 import S from "./App.module.css";
+import { Register } from "./pages/register/register";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           </Route>
 
             <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
         </Routes>
       </div>
     </>
