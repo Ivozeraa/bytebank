@@ -43,8 +43,11 @@ export const Dashboard = () => {
   return (
     <>
       <div className={style.container}>
-        <h1 className={style.welcome}>Seja bem vindo</h1>
-        <h2 className={style.name}>{userName}</h2>
+        <h1 className={style.welcome}>Seja bem vindo,</h1>
+        {userName ? 
+          <h2 className={style.name}>{`${userName}!`}</h2> :
+          <h2 className={style.name}></h2> 
+        }
       </div>
 
       <ToastContainer />

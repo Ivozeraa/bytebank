@@ -1,17 +1,11 @@
-import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-import { FaTachometerAlt, FaWallet, FaExchangeAlt, FaCreditCard, FaChartLine, FaHandHoldingUsd, FaCog, FaSignOutAlt } from 'react-icons/fa';
+import { FaTachometerAlt, FaWallet, FaExchangeAlt, FaCreditCard, FaChartLine, FaHandHoldingUsd, FaCog } from 'react-icons/fa';
 
 import S from './styles/Sidebar.module.css';
 
 export const Sidebar = () => {
-  const [isLogged, setIsLogged] = useState(false);
   const location = useLocation();
-
-  const handleLogout = () => {
-    setIsLogged(false);
-  };
 
   const getLinkClass = (path: string) => {
     return location.pathname === path ? S.active : '';
@@ -56,12 +50,6 @@ export const Sidebar = () => {
         <p className={S.pageName}>Settings</p>
       </Link>
 
-      {isLogged && (
-        <Link to="/" onClick={handleLogout} className={`${S.sidebarPage} ${getLinkClass('/logout')}`}>
-          <div className={S.icon}><FaSignOutAlt /></div>
-          <p className={S.pageName}>Logout</p>
-        </Link>
-      )}
     </aside>
   );
 };
