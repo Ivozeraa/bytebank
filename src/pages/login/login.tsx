@@ -79,7 +79,7 @@ export const Login: React.FC = () => {
           {isLoading ? "Entrando..." : "Entrar"}
         </button>
 
-        <a href="/register" className={styles.registerBttn}>
+        <a href="/registro" className={styles.registerBttn}>
           Não possui conta? Cadastre-se já
         </a>
       </div>
