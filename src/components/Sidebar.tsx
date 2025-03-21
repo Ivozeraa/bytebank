@@ -15,12 +15,7 @@ import {
 import S from "./styles/Sidebar.module.css";
 
 export const Sidebar = () => {
-  const [isLogged, setIsLogged] = useState(false);
   const location = useLocation();
-
-  const handleLogout = () => {
-    setIsLogged(false);
-  };
 
   const getLinkClass = (path: string) => {
     return location.pathname === path ? S.active : "";
