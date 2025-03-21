@@ -3,6 +3,7 @@ import { register } from '../../utils/auth';
 import styles from './Register.module.css'; 
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 export const Register: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -10,6 +11,7 @@ export const Register: React.FC = () => {
   const [name, setName] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate(); 
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
@@ -61,7 +63,7 @@ export const Register: React.FC = () => {
       <div className={styles.card}>
         <h2 className={styles.title}>Registrar</h2>
         <div className={styles.inputGroup}>
-          <label>Nome</label>
+          <label>Nome Completo</label>
           <input
             type="text"
             placeholder="Nome"
@@ -95,7 +97,7 @@ export const Register: React.FC = () => {
         >
           {isLoading ? 'Registrando...' : 'Registrar'}
         </button>
-        <a className={styles.registerBttn} href="/login">Já tem uma conta? Faça login.</a>
+        <a className={styles.registerBttn} onClick={() => navigate("/login")}>Já tem uma conta? Faça login.</a>
       </div>
       <ToastContainer />
     </div>

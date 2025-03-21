@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { supabase } from "../services/supabase"; // Importando o Supabase
+import { supabase } from "../services/supabase";
 import S from "./styles/Header.module.css";
 import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
 import { toast } from "react-toastify";

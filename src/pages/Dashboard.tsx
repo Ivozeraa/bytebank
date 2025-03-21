@@ -25,15 +25,15 @@ export const Dashboard = () => {
   }, []);
   
   useEffect(() => {
-    let toastId: any; // Armazena o ID do toast para removê-lo depois
+    let toastId: any; 
 
     if (loading) {
       toastId = toast.loading("Carregando...");
     } else {
-      toast.dismiss(toastId); // Remove o toast quando `loading` for `false`
+      toast.dismiss(toastId); 
     }
 
-    return () => toast.dismiss(toastId); // Cleanup para evitar múltiplos toasts
+    return () => toast.dismiss(toastId); 
   }, [loading]);
 
   if (error) {

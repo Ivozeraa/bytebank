@@ -1,7 +1,3 @@
 export const Account = () => {
-  return(
-    <div>
-      
-    </div>
-  )
-}
+  return <div></div>;
+};

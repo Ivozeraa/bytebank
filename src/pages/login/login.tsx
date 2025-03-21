@@ -10,7 +10,7 @@ export const Login: React.FC = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     setIsLoading(true);
@@ -22,8 +22,7 @@ export const Login: React.FC = () => {
 
       setTimeout(() => {
         navigate("/dashboard");
-      }, 2000); 
-
+      }, 2000);
     } catch (err: any) {
       console.error("Erro no login:", err);
 
@@ -50,7 +49,11 @@ export const Login: React.FC = () => {
 
       <div className={styles.card}>
         <h2 className={styles.title}>Entrar</h2>
-        {error && <p className={styles.error} aria-live="polite">{error}</p>}
+        {error && (
+          <p className={styles.error} aria-live="polite">
+            {error}
+          </p>
+        )}
         <div className={styles.inputGroup}>
           <label htmlFor="email">Email</label>
           <input
@@ -79,7 +82,10 @@ export const Login: React.FC = () => {
           {isLoading ? "Entrando..." : "Entrar"}
         </button>
 
-        <a onClick={() => navigate("/registro")} className={styles.registerBttn}>
+        <a
+          onClick={() => navigate("/registro")}
+          className={styles.registerBttn}
+        >
           Não possui conta? Cadastre-se já
         </a>
       </div>

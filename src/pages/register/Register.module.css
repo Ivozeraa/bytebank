@@ -87,5 +87,7 @@
   .registerBttn:hover {
     color: #580aa3;
     transition: ease-in-out 0.3s;
+    cursor: pointer;
   }
+  
   

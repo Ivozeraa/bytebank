@@ -1,7 +1,3 @@
 export const Investment = () => {
-  return(
-    <div>
-      
-    </div>
-  )
-}
+  return <div></div>;
+};
