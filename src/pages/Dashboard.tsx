@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { getUserProfile } from "../utils/auth";
 import { toast, ToastContainer } from "react-toastify";
-import style from "./styles/dashboard.module.css";
+
+import S from "./styles/Dashboard.module.css";
 
 export const Dashboard = () => {
   const [userName, setUserName] = useState<string | null>(null);
@@ -42,12 +43,15 @@ export const Dashboard = () => {
 
   return (
     <>
-      <div className={style.container}>
-        <h1 className={style.welcome}>Welcome</h1>
-        {userName ? 
-          <h2 className={style.name}>{`${userName}!`}</h2> :
-          <h2 className={style.name}></h2> 
-        }
+      <div className={S.container}>
+        <div className={S.titleDashboard}>
+          <h1 className={S.title}>Welcome,</h1>
+          {userName ? 
+            <h1 className={S.name}>{`${userName}!`}</h1> :
+            <h1 className={S.name}>Visitant!</h1> 
+          }
+        </div>
+        
       </div>
 
       <ToastContainer />
