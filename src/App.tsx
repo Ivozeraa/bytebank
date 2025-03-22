@@ -11,6 +11,8 @@ import { Login } from "./pages/login/login";
 import { Settings } from "./pages/Settings";
 
 import S from "./App.module.css";
+import './global.css'
+
 import { Register } from "./pages/register/register";
 
 function App() {

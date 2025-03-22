@@ -4,6 +4,7 @@ import { supabase } from "../services/supabase";
 import S from "./styles/Header.module.css";
 import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
+import logo from '../assets/logo.png'
 
 export const Header = () => {
   const [user, setUser] = useState<any>(null);
@@ -35,7 +36,7 @@ export const Header = () => {
     <>
       <header className={S.header}>
         <div className={S.logo}>
-          <img src="src/assets/logo.png" alt="logo" />
+          <img src={logo} alt="logo" />
           <h2 className={S.headerTitle}>BYTEBANK</h2>
         </div>
 

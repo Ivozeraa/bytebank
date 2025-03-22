@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
+import React, { createContext, useState, useContext, useEffect, ReactNode } from "react";
 
 interface ThemeContextType {
   isDarkMode: boolean;
@@ -12,21 +12,20 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const storedDarkMode = localStorage.getItem('isDarkMode');
-  const [isDarkMode, setDarkMode] = useState<boolean>(storedDarkMode === 'true');
+  const storedDarkMode = localStorage.getItem("isDarkMode");
+  const [isDarkMode, setDarkMode] = useState<boolean>(storedDarkMode === "true");
 
   const toggleDarkMode = (checked: boolean) => {
     setDarkMode(checked);
-    localStorage.setItem('isDarkMode', checked.toString());
+    localStorage.setItem("isDarkMode", checked.toString());
   };
 
   useEffect(() => {
+    console.log("Modo escuro ativado?", isDarkMode);
     if (isDarkMode) {
-      document.body.style.backgroundColor = '#121212';
-      document.body.style.color = '#ffffff';
+      document.body.classList.add("dark-mode");
     } else {
-      document.body.style.backgroundColor = '#ffffff';
-      document.body.style.color = '#000000';
+      document.body.classList.remove("dark-mode");
     }
   }, [isDarkMode]);
 
@@ -40,7 +39,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 export const useTheme = (): ThemeContextType => {
   const context = useContext(ThemeContext);
   if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
+    throw new Error("useTheme must be used within a ThemeProvider");
   }
   return context;
 };
