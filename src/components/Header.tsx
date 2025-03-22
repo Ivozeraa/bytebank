@@ -24,7 +24,7 @@ export const Header = () => {
     await supabase.auth.signOut();
     setUser(null);
 
-    toast.dark("Deslogando! Até logo 👋");
+    toast.dark("Logging out, see you later!");
 
     setTimeout(() => {
       navigate("/login");
@@ -42,7 +42,7 @@ export const Header = () => {
         {user ? (
           <button onClick={handleLogout} className={S.login}>
             <FaSignOutAlt />
-            <p>Sair</p>
+            <p>Logout</p>
           </button>
         ) : (
           <Link to="/login" className={S.sidebarPage}>

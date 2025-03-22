@@ -12,9 +12,9 @@ export const Dashboard = () => {
     const fetchUserProfile = async () => {
       try {
         const profile = await getUserProfile();
-        setUserName(profile?.name || "Nome não encontrado");
+        setUserName(profile?.name || "Name not found");
       } catch (err) {
-        setError("Erro ao carregar o perfil");
+        setError("Error loading profile");
         console.error(err);
       } finally {
         setLoading(false);
@@ -28,7 +28,7 @@ export const Dashboard = () => {
     let toastId: any; 
 
     if (loading) {
-      toastId = toast.loading("Carregando...");
+      toastId = toast.loading("Loading...");
     } else {
       toast.dismiss(toastId); 
     }
@@ -43,7 +43,7 @@ export const Dashboard = () => {
   return (
     <>
       <div className={style.container}>
-        <h1 className={style.welcome}>Seja bem vindo,</h1>
+        <h1 className={style.welcome}>Welcome</h1>
         {userName ? 
           <h2 className={style.name}>{`${userName}!`}</h2> :
           <h2 className={style.name}></h2> 

@@ -19,6 +19,8 @@ function App() {
       <div className={S.app}>
         <Routes>
           <Route path="/" element={<DefaultLayout />}>
+            <Route index element={<Dashboard />} />
+
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/account" element={<Account />} />
             <Route path="/transfer" element={<Transfer />} />
@@ -28,7 +30,7 @@ function App() {
             <Route path="/settings" element={<Settings />} />
           </Route>
 
-          <Route path="/registro" element={<Register />} /> 
+          <Route path="/register" element={<Register />} /> 
           <Route path="/login" element={<Login />} />
         </Routes>
       </div>

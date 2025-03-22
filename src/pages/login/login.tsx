@@ -18,22 +18,22 @@ export const Login: React.FC = () => {
 
     try {
       await login(email, password);
-      toast.success("Login realizado com sucesso!");
+      toast.success("Login successful!");
 
       setTimeout(() => {
         navigate("/dashboard");
       }, 2000);
     } catch (err: any) {
-      console.error("Erro no login:", err);
+      console.error("Login error:", err);
 
-      let errorMessage = "Algo deu errado. Tente novamente.";
+      let errorMessage = "Something went wrong. Try again.";
 
       if (err.response && err.response.data) {
         errorMessage = err.response.data.message || errorMessage;
       } else if (err.message.includes("network")) {
-        errorMessage = "Erro de conexão. Verifique sua internet.";
+        errorMessage = "Connection error. Check your internet.";
       } else if (err.message.includes("invalid credentials")) {
-        errorMessage = "Email ou senha incorretos.";
+        errorMessage = "Incorrect email or password.";
       }
 
       setError(errorMessage);
@@ -48,7 +48,7 @@ export const Login: React.FC = () => {
       <ToastContainer />
 
       <div className={styles.card}>
-        <h2 className={styles.title}>Entrar</h2>
+        <h2 className={styles.title}>Login</h2>
         {error && (
           <p className={styles.error} aria-live="polite">
             {error}
@@ -59,17 +59,17 @@ export const Login: React.FC = () => {
           <input
             id="email"
             type="email"
-            placeholder="Digite seu email"
+            placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className={styles.inputGroup}>
-          <label htmlFor="password">Senha</label>
+          <label htmlFor="password">Password</label>
           <input
             id="password"
             type="password"
-            placeholder="Digite sua senha"
+            placeholder="Enter your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -79,14 +79,15 @@ export const Login: React.FC = () => {
           disabled={isLoading}
           className={styles.button}
         >
-          {isLoading ? "Entrando..." : "Entrar"}
+          {isLoading ? "Logging in..." : "Login"}
         </button>
 
         <a
-          onClick={() => navigate("/registro")}
+          onClick={() => navigate("/register")}
           className={styles.registerBttn}
         >
-          Não possui conta? Cadastre-se já
+          
+          Don't have an account? Sign up now
         </a>
       </div>
     </div>

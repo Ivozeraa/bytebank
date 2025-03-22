@@ -24,8 +24,8 @@ export const Register: React.FC = () => {
 
     if (!validateEmail(email)) {
       setIsLoading(false);
-      setError('Por favor, insira um email válido.');
-      toast.error('Por favor, insira um email válido.', {
+      setError('Please, insert a valid email address.');
+      toast.error('Please, insert a valid email address.', {
         position: 'top-right',
       });
       return;
@@ -33,20 +33,20 @@ export const Register: React.FC = () => {
 
     try {
       await register(email, password, name);
-      toast.success('Registro bem-sucedido!', {
+      toast.success('Successful registration!', {
         position: 'top-right',
       });
     } catch (err: any) {
-      console.error('Erro no registro:', err);
+      console.error('Error in registration:', err);
 
-      let errorMessage = 'Algo deu errado. Tente novamente.';
+      let errorMessage = 'Something went wrong. Try again.';
 
       if (err.response && err.response.data) {
         errorMessage = err.response.data.message || errorMessage;
       } else if (err.message.includes('network')) {
-        errorMessage = 'Erro de conexão. Verifique sua internet.';
+        errorMessage = 'Connection error. Check your internet.';
       } else if (err.message.includes('email already exists')) {
-        errorMessage = 'Este email já está registrado.';
+        errorMessage = 'This email is already registered.';
       }
 
       setError(errorMessage);
@@ -61,12 +61,12 @@ export const Register: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.card}>
-        <h2 className={styles.title}>Registrar</h2>
+        <h2 className={styles.title}>Register</h2>
         <div className={styles.inputGroup}>
-          <label>Nome Completo</label>
+          <label>Full name</label>
           <input
             type="text"
-            placeholder="Nome"
+            placeholder="Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -84,7 +84,7 @@ export const Register: React.FC = () => {
           <label>Senha</label>
           <input
             type="password"
-            placeholder="Senha"
+            placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -95,9 +95,11 @@ export const Register: React.FC = () => {
           onClick={handleRegister}
           disabled={isLoading || !email || !password || !name}
         >
-          {isLoading ? 'Registrando...' : 'Registrar'}
+          {isLoading ? 'Registering...' : 'Register'}
         </button>
-        <a className={styles.registerBttn} onClick={() => navigate("/login")}>Já tem uma conta? Faça login.</a>
+        <a className={styles.registerBttn} onClick={() => navigate("/login")}>
+          Already have an account? Log in.
+        </a>
       </div>
       <ToastContainer />
     </div>
