@@ -86,7 +86,7 @@ export const Login: React.FC = () => {
           onClick={() => navigate("/register")}
           className={styles.registerBttn}
         >
-          
+
           Don't have an account? Sign up now
         </a>
       </div>

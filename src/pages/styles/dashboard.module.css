@@ -3,13 +3,14 @@
   flex-direction: column;
 }
 
-.titleDashboard{
+.titleDashboard {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.title, .name{
+.title,
+.name {
   font-size: 2rem;
   font-weight: bold;
   color: var(--purple);

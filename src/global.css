@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @import "tailwindcss";
 
-:root{
+:root {
   --icon: #A4B4CB;
   --font: #1a1335;
   --purple: #5D17EB;

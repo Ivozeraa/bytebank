@@ -24,17 +24,17 @@ export const Dashboard = () => {
 
     fetchUserProfile();
   }, []);
-  
+
   useEffect(() => {
-    let toastId: any; 
+    let toastId: any;
 
     if (loading) {
       toastId = toast.loading("Loading...");
     } else {
-      toast.dismiss(toastId); 
+      toast.dismiss(toastId);
     }
 
-    return () => toast.dismiss(toastId); 
+    return () => toast.dismiss(toastId);
   }, [loading]);
 
   if (error) {
@@ -46,12 +46,12 @@ export const Dashboard = () => {
       <div className={S.container}>
         <div className={S.titleDashboard}>
           <h1 className={S.title}>Welcome,</h1>
-          {userName ? 
+          {userName ?
             <h1 className={S.name}>{`${userName}!`}</h1> :
-            <h1 className={S.name}>Visitant!</h1> 
+            <h1 className={S.name}>Visitant!</h1>
           }
         </div>
-        
+
       </div>
 
       <ToastContainer />

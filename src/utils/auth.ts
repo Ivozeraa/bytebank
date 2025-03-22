@@ -12,10 +12,10 @@ export const register = async (email: string, password: string, name: string) =>
 
   if (data?.user) {
     const { error: profileError } = await supabase
-      .from('users') 
+      .from('users')
       .upsert([
         {
-          id: data.user.id,  
+          id: data.user.id,
           name,
         }
       ]);
@@ -25,7 +25,7 @@ export const register = async (email: string, password: string, name: string) =>
     }
   }
 
-  return data?.user;  
+  return data?.user;
 };
 
 export const login = async (email: string, password: string) => {
@@ -38,7 +38,7 @@ export const login = async (email: string, password: string) => {
     throw new Error(error.message);
   }
 
-  return data?.user;  
+  return data?.user;
 };
 
 export const getUserProfile = async () => {
@@ -61,7 +61,7 @@ export const getUserProfile = async () => {
       throw new Error(profileError.message);
     }
 
-    return data;  
+    return data;
   }
 
   throw new Error('Usuário não autenticado');

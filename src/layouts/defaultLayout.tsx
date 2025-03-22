@@ -4,15 +4,15 @@ import { Outlet } from 'react-router-dom'
 
 import S from './defaultLayout.module.css'
 
-export function DefaultLayout(){
-    return(
+export function DefaultLayout() {
+    return (
         <>
             <Header />
             <div className={S.default}>
                 <Sidebar />
                 <Outlet />
             </div>
-            
+
         </>
     )
 }

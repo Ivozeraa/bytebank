@@ -32,12 +32,13 @@
   color: var(--font);
 }
 
-.pageName, .icon {
+.pageName,
+.icon {
   font-size: 1rem;
 }
 
 .sidebarPage:hover {
-  background-color: var(--purple); 
+  background-color: var(--purple);
 }
 
 .sidebarPage:hover .pageName,
@@ -48,7 +49,9 @@
 
 .active {
   background-color: var(--t-purple);
-  .pageName, .icon{
+
+  .pageName,
+  .icon {
     color: var(--purple);
   }
 }
@@ -64,4 +67,3 @@
   border-radius: 2px;
   transition: 5s;
 }
-

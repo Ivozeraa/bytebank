@@ -1,27 +1,27 @@
-.header{
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px;
 }
 
-.logo{
+.logo {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
 
-.logo img{
+.logo img {
   width: 3rem;
 }
 
-.headerTitle{
+.headerTitle {
   font-family: 'Rubik', sans-serif;
   font-weight: bold;
 }
 
-.login{
+.login {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -35,7 +35,7 @@
   transition: .2s ease-in-out;
 }
 
-.login:hover{
+.login:hover {
   scale: 1.1;
   background-color: var(--purple);
   color: rgb(236, 246, 255);
