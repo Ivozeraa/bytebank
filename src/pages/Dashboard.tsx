@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getUserProfile } from "../utils/auth";
 import { toast, ToastContainer } from "react-toastify";
 
-import S from "./styles/Dashboard.module.css";
+import S from "./styles/dashboard.module.css";
 
 export const Dashboard = () => {
   const [userName, setUserName] = useState<string | null>(null);
