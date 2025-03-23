@@ -2,7 +2,10 @@
   max-width: 12rem;
   overflow: hidden;
   height: 84.2vh;
+  transition: background-color 0.3s ease;
 }
+
+
 
 .mainSidebar {
   height: 75vh;
@@ -44,16 +47,16 @@
 .sidebarPage:hover .pageName,
 .sidebarPage:hover .icon {
   color: rgb(236, 246, 255);
-  transition: color 0.3s ease, color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .active {
   background-color: var(--t-purple);
+}
 
-  .pageName,
-  .icon {
-    color: var(--purple);
-  }
+.active .pageName,
+.active .icon {
+  color: var(--purple);
 }
 
 .active::before {
@@ -66,4 +69,47 @@
   background-color: var(--purple);
   border-radius: 2px;
   transition: 5s;
+}
+
+.sidebar.dark .icon {
+  color: var(--icon-dark);
+}
+
+.sidebar.dark .pageName {
+  color: var(--font-dark);
+}
+
+.sidebar.dark .sidebarPage:hover {
+  background-color: var(--purple-dark);
+}
+
+.sidebar.dark .sidebarPage:hover .pageName,
+.sidebar.dark .sidebarPage:hover .icon {
+  color: rgb(236, 246, 255);
+}
+
+.sidebar.dark .active {
+  background-color: var(--t-purple-dark);
+}
+
+.sidebar.dark .active .pageName,
+.sidebar.dark .active .icon {
+  color: var(--font-dark);
+}
+
+.sidebar.dark .active::before {
+  background-color: var(--purple-dark);
+}
+
+.themeToggle {
+  margin: 0.5rem 2rem;
+}
+
+.themeLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--font);
+  cursor: pointer;
 }

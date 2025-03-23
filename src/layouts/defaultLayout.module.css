@@ -1,3 +1,8 @@
 .default {
   display: flex;
 }
+
+.dark-mode .default {
+  background-color: var(--bg-dark);
+  color: rgb(255, 255, 255);
+}

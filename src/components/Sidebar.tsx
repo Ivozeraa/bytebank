@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTheme } from '../context/ThemeProvider';
 
 import { FaTachometerAlt, FaWallet, FaExchangeAlt, FaCreditCard, FaChartLine, FaHandHoldingUsd, FaCog, FaSignOutAlt } from 'react-icons/fa';
 
 import S from './styles/Sidebar.module.css';
+import '../global.css';
 
 export const Sidebar = () => {
+  const { isDarkMode } = useTheme();
   const [isLogged, setIsLogged] = useState(false);
   const location = useLocation();
 
@@ -18,7 +21,7 @@ export const Sidebar = () => {
   };
 
   return (
-    <aside className={S.sidebar}>
+    <aside className={`${S.sidebar} ${isDarkMode ? S.dark : ''}`}>
       <div className={S.mainSidebar}>
         <Link to="/dashboard" className={`${S.sidebarPage} ${getLinkClass('/dashboard')}`}>
           <div className={S.icon}><FaTachometerAlt /></div>

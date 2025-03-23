@@ -9,8 +9,9 @@
   --t-purple: #5e17eb3e;
   --icon-dark: #D1D9E6; 
   --font-dark: #E6E1FF;
-  --purple-dark: #BB86FC;
+  --purple-dark: #4a00a4;
   --t-purple-dark: #bb86fc3e;
+  --bg-dark: #0d0a1b;
 }
 
 * {
@@ -26,31 +27,6 @@ body {
 }
 
 body.dark-mode {
-  background-color: var(--font);
-  color: var(--font-dark);
-}
-
-body.dark-mode .sidebar {
-  background-color: var(--purple-dark);
-}
-
-body.dark-mode .sidebarPage {
-  color: var(--icon-dark);
-}
-
-body.dark-mode .sidebarPage:hover {
-  background-color: var(--purple-dark);
-}
-
-body.dark-mode .sidebarPage:hover .pageName,
-body.dark-mode .sidebarPage:hover .icon {
-  color: rgb(236, 246, 255);
-}
-
-body.dark-mode .active {
-  background-color: var(--t-purple-dark);
-}
-
-body.dark-mode .active::before {
-  background-color: var(--purple-dark);
+  background-color: var(--bg-dark);
+  color: var(--font-dark); 
 }

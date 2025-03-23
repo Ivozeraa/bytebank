@@ -11,7 +11,7 @@ export const DarkMode = () => {
         onChange={toggleDarkMode}
         size={30}
       />
-      
+
     </div>
   );
 };
